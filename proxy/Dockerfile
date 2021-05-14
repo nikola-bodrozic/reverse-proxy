@@ -1,5 +1,5 @@
-FROM nginx:latest
+FROM nginx:alpine
 
-RUN rm /etc/nginx/conf.d/*
+COPY nginx.conf /etc/nginx/nginx.conf
 
-COPY proxy.conf /etc/nginx/conf.d/
+RUN apk update && apk add bash
